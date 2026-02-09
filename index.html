@@ -32,8 +32,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1001;
- /* background: rgba(15, 23, 42, 0.8);*/
-  background:none;
+  background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: background 0.3s;
@@ -85,6 +84,7 @@ nav {
   height: 100vh;
  /* background: #020617;*/
   backdrop-filter:blur(12px);
+  background:none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -429,10 +429,12 @@ window.onscroll = function() {
   }
 
   if (scrollPos > 50) {
-    nav.style.background = 'rgba(2, 6, 23, 0.95)';
+    nav.style.background = 'none';
+     nav.style.backdropFilter = 'blur(12px)';
   } else {
     nav.style.background = 'rgba(15, 23, 42, 0.8)';
   }
+
 
   header.style.backgroundPosition = `center ${scrollPos * 0.5}px`;
   header.style.filter = `hue-rotate(${Math.min(scrollPos / 20, 45)}deg)`;
